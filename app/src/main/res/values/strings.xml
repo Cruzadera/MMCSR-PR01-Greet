@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">Greeting</string>
+    <string name="main_lblName">Name</string>
+    <string name="main_lblLastName">Last Name</string>
+    <string name="main_checkPolite">Polite</string>
+    <string name="main_btnGreet">Greet</string>
+    <string name="main_btnReset">Reset</string>
 </resources>

@@ -11,12 +11,16 @@
         android:id="@+id/txtName"
         android:layout_height="wrap_content"
         android:layout_width="match_parent"
-        android:hint="@string/main_lblName"/>
+        android:hint="@string/main_lblName"
+        android:inputType="textPersonName"
+        android:textColorHint="@color/colorPrimaryDark"/>
     <EditText
         android:id="@+id/txtLastName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="@string/main_lblLastName"/>
+        android:hint="@string/main_lblLastName"
+        android:inputType="textPersonName"
+        android:textColorHint="@color/colorPrimaryDark"/>
     <CheckBox
         android:id="@+id/checkboxPolite"
         android:layout_width="wrap_content"

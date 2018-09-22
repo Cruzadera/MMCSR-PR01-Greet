@@ -5,7 +5,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -13,6 +15,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private EditText txtLastName;
     private Button btnGreet;
     private Button btnReset;
+    private CheckBox checkboxPolite;
 
 
     @Override
@@ -27,8 +30,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         txtLastName = ActivityCompat.requireViewById(this, R.id.txtLastName);
         btnGreet = ActivityCompat.requireViewById(this, R.id.btnGreet);
         btnReset = ActivityCompat.requireViewById(this, R.id.btnReset);
+        checkboxPolite = ActivityCompat.requireViewById(this, R.id.checkboxPolite);
 
         btnReset.setOnClickListener(this);
+        btnGreet.setOnClickListener(this);
     }
 
     private void toReset() {
@@ -39,6 +44,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onClick(View v) {
-        toReset();
+        switch (v.getId()){
+            case R.id.btnGreet:
+                Toast.makeText(this, "Ms/Mr", Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.btnReset:
+                toReset();
+                break;
+        }
+
     }
+
+
 }

@@ -13,14 +13,18 @@
         android:layout_width="match_parent"
         android:hint="@string/main_lblName"
         android:inputType="textPersonName"
-        android:textColorHint="@color/colorPrimaryDark"/>
+        android:background="@color/colorGrayDark"
+        android:textColorHint="@color/colorGrayLight"
+        android:padding="16dp"/>
     <EditText
         android:id="@+id/txtLastName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/main_lblLastName"
         android:inputType="textPersonName"
-        android:textColorHint="@color/colorPrimaryDark"/>
+        android:background="@color/colorGrayDark"
+        android:textColorHint="@color/colorGrayLight"
+        android:padding="16dp"/>
     <CheckBox
         android:id="@+id/checkboxPolite"
         android:layout_width="wrap_content"

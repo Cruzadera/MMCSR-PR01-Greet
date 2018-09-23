@@ -39,14 +39,23 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private void toReset() {
         txtName.setText("");
         txtLastName.setText("");
+        checkboxPolite.setChecked(false);
     }
 
 
     @Override
     public void onClick(View v) {
+        String name;
+        String lastName;
         switch (v.getId()){
             case R.id.btnGreet:
-                Toast.makeText(this, "Ms/Mr", Toast.LENGTH_SHORT).show();
+                name = txtName.getText().toString();
+                lastName = txtLastName.getText().toString();
+                if(checkboxPolite.isChecked()){
+                    Toast.makeText(this, getString(R.string.main_StringPolite)+" "+ name+" "+ lastName, Toast.LENGTH_SHORT).show();
+                }else{
+                    Toast.makeText(this, getString(R.string.main_stringNoPolite)+" "+ name +" "+ lastName, Toast.LENGTH_LONG).show();
+                }
                 break;
             case R.id.btnReset:
                 toReset();

@@ -2,7 +2,9 @@
     <string name="app_name">Greeting</string>
     <string name="main_lblName">Name</string>
     <string name="main_lblLastName">Last Name</string>
-    <string name="main_checkPolite">Polite</string>
+    <string name="main_checkPolite">Politely</string>
     <string name="main_btnGreet">Greet</string>
     <string name="main_btnReset">Reset</string>
+    <string name="main_StringPolite">Welcome, Ms/Mr.</string>
+    <string name="main_stringNoPolite">Hello</string>
 </resources>

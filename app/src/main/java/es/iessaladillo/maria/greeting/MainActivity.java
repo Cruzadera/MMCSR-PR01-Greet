@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
@@ -16,6 +17,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private Button btnGreet;
     private Button btnReset;
     private CheckBox checkboxPolite;
+    private TextView text;
+    private String message;
 
 
     @Override
@@ -26,11 +29,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     private void initViews() {
-        txtName = ActivityCompat.requireViewById(this, R.id.txtName);
-        txtLastName = ActivityCompat.requireViewById(this, R.id.txtLastName);
-        btnGreet = ActivityCompat.requireViewById(this, R.id.btnGreet);
-        btnReset = ActivityCompat.requireViewById(this, R.id.btnReset);
-        checkboxPolite = ActivityCompat.requireViewById(this, R.id.checkboxPolite);
+        txtName = findViewById(R.id.txtName);
+        txtLastName = findViewById(R.id.txtLastName);
+        btnGreet = findViewById(R.id.btnGreet);
+        btnReset = findViewById(R.id.btnReset);
+        checkboxPolite = findViewById(R.id.checkboxPolite);
+        text = findViewById(R.id.textView);
 
         btnReset.setOnClickListener(this);
         btnGreet.setOnClickListener(this);
@@ -40,22 +44,18 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         txtName.setText("");
         txtLastName.setText("");
         checkboxPolite.setChecked(false);
+        text.setText("");
     }
 
 
     @Override
     public void onClick(View v) {
-        String name;
-        String lastName;
         switch (v.getId()){
             case R.id.btnGreet:
-                name = txtName.getText().toString();
-                lastName = txtLastName.getText().toString();
                 if(checkboxPolite.isChecked()){
-                    Toast.makeText(this, getString(R.string.main_StringPolite)+" "+ name+" "+ lastName, Toast.LENGTH_SHORT).show();
+                    text.setText(getString(R.string.main_StringPolite) + " " + txtName.getText() + " " + txtLastName.getText());
                 }else{
-                    Toast.makeText(this, getString(R.string.main_stringNoPolite)+" "+ name +" "+ lastName, Toast.LENGTH_LONG).show();
-                }
+                    text.setText(getString(R.string.main_stringNoPolite) + " " + txtName.getText() + " " + txtLastName.getText());                }
                 break;
             case R.id.btnReset:
                 toReset();

@@ -18,7 +18,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private Button btnReset;
     private CheckBox checkboxPolite;
     private TextView text;
-    private String message;
 
 
     @Override
